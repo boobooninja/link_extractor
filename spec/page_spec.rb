@@ -15,15 +15,19 @@ describe Page do
     end
   end
 
-  describe "#parse!" do
+  describe "#parse" do
     before do
-      subject.add_word(word_line)
-      subject.add_word(word_line)
+      subject.add_word("example 270 10 300 20")
+      subject.add_word(". 300 10 310 20")
+      subject.add_word("com 310 10 320 20")
     end
 
-    it "joins the words and parses them" do
-      # TODO: finish parse method
-      expect(subject.parse!).to eq("This This")
+    describe "checks for links within the text and yields to a block" do
+      specify {
+        expect {
+          |b| subject.parse &b
+        }.to yield_successive_args(1, "example.com 270 10 320 20")
+      }
     end
   end
 
