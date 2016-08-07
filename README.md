@@ -1,12 +1,12 @@
-## Link Extractor
+# Link Extractor
 
 This is a Ruby CLI application that extracts links from PDF data.
 
 * Specs are run using rspec
 
-* The application can be run from main.rb
+* The application can be run from bin/parse and waits for input
 
-# NOTES:
+## NOTES:
 Given the time constraints on this challenge, I focused on clean,
 easy to understand and well tested code.
 
