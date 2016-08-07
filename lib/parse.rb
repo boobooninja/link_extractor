@@ -25,7 +25,9 @@ class Parse
       @job.page.add_word @input.gets
     end
 
-    @job.page.parse!
+    @job.page.parse do |line|
+      @output.puts(line)
+    end
   end
 
 end
