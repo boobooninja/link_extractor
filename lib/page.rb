@@ -1,13 +1,9 @@
 class Page
-  attr_reader :word_count
+  attr_accessor :word_count
 
   def initialize
     @word_count = 0
     @words = []
-  end
-
-  def word_count=(num)
-    @word_count = num
   end
 
   def add_word(word_line)
