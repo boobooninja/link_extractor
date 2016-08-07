@@ -1,9 +1,8 @@
+require_relative '../helpers/tld'
 require_relative '../lib/job'
 require_relative '../lib/page'
 require_relative '../lib/word'
 require_relative '../lib/parse'
-
-require 'aruba/rspec'
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
