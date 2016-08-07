@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift '.'
+
+require 'helpers/tld'
+require 'lib/word'
+require 'lib/page'
+require 'lib/job'
+require 'lib/parse'
+
+def run!
+  Parse.new().execute!
+end
+
+if $0 == __FILE__
+  run!
+end
