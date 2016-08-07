@@ -1,6 +1,7 @@
 class Page
   include TLD
   attr_accessor :word_count
+  attr_reader :match_count, :matches
 
   def initialize
     @word_count = 0
@@ -27,10 +28,10 @@ class Page
 
   def parse
     check_for_links(@parse_string)
-    yield @match_count
-    @matches.each do |match|
-      yield match
-    end
+    # yield @match_count
+    # @matches.each do |match|
+    #   yield match
+    # end
   end
 
   private

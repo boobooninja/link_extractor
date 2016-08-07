@@ -14,6 +14,13 @@ class Parse
       @job.new_page
       process_page
     end
+
+    @job.pages.each do |page|
+      @output.puts(page.match_count)
+      page.matches.each do |match|
+        @output.puts(match)
+      end
+    end
   end
 
   private
@@ -25,9 +32,7 @@ class Parse
       @job.page.add_word @input.gets
     end
 
-    @job.page.parse do |line|
-      @output.puts(line)
-    end
+    @job.page.parse
   end
 
 end

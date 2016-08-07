@@ -7,6 +7,9 @@ describe Page do
   it { should respond_to :word_count }
   it { should respond_to :word_count= }
 
+  it { should respond_to :match_count }
+  it { should respond_to :matches }
+
   describe "#add_word" do
     it "adds a Word to @words" do
       expect(subject.instance_variable_get(:@words).length).to eq(0)
@@ -22,12 +25,10 @@ describe Page do
       subject.add_word("com 310 10 320 20")
     end
 
-    describe "checks for links within the text and yields to a block" do
-      specify {
-        expect {
-          |b| subject.parse &b
-        }.to yield_successive_args(1, "example.com 270 10 320 20")
-      }
+    it "checks for links within the text and adds to matches" do
+      expect(subject.matches.length).to eq(0)
+      subject.parse
+      expect(subject.matches.length).to eq(1)
     end
   end
 

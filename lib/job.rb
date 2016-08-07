@@ -1,5 +1,5 @@
 class Job
-  attr_accessor :page_count
+  attr_accessor :page_count, :pages
 
   def initialize
     @page_count = 0
