@@ -28,10 +28,6 @@ class Page
 
   def parse
     check_for_links(@parse_string)
-    # yield @match_count
-    # @matches.each do |match|
-    #   yield match
-    # end
   end
 
   private
